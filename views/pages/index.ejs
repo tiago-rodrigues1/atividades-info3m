@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda INFO3M</title>
+
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
+</head>
+
+<body class="container-fluid bg-dark p-0 m-0 text-light">
+    <%- include('../partials/navbar') %>
+    <main class="d-flex flex-column flex-md-row gap-4 p-4 w-100 h-100">
+        <%- include('../partials/filters') %>
+        <section class="w-100 h-100 p-0 m-0">
+            <h1 class="fs-2">Tarefas</h1>
+            <div class="m-0 p-0 row row-cols-1 row-cols-md-2 row-cols-lg-3 row-xl-4 g-4">
+                <%- include('../partials/atividadeCard') %>
+            </div>
+        </section>
+    </main>
+    <script src="/scripts/jquery.min.js"></script>
+    <script src="/scripts/dayjs.min.js"></script>
+    <script src="/scripts/bootstrap.bundle.min.js"></script>
+    <script src="/scripts/script.js"></script>
+</body>
+
+</html>
