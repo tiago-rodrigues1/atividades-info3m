@@ -1,0 +1,58 @@
+<%
+    const subjects = [
+        "Todas",
+        "Português",
+        
+    ]
+%>
+
+<form class="col-12 col-md-4 col-lg-3 col-xl-2" method="get" id="filterForm">
+    <div class="hstack align-items-center justify-content-between toggler" style="cursor: pointer;">
+        <h5>Filtros</h5>
+        <img src="assets/icons/chevron-down.svg" alt="Ícone que indica seta para baixo">
+    </div>
+    <ul class="pt-3 list-unstyled list-group vstack gap-3" id="filters">
+        <li>
+            <button class="btn btn-sm btn-outline-primary" type="submit">Aplicar</button>
+        </li>
+        <li class="form-floating">
+            <select class="form-select bg-dark text-light border-secondary border-opacity-50 rounded-3"
+                aria-label="Filtrar por matéria" name="subject" id="subject">
+                <option value="1" selected>Todas</option>
+                <option value="2">Matématica</option>
+                <option value="3">Biologia</option>
+                <option value="4">Química</option>
+            </select>
+            <label for="subject">Filtrar por matéria</label>
+        </li>
+        <li class="p-3 border border-secondary border-opacity-50 rounded-3">
+            <input class="form-check-input filterInput me-1" type="radio" name="view" value="week" id="weekBtn"
+                checked>
+            <label class="form-check-label" for="weekBtn">Tarefas da semana</label>
+        </li>
+        <li class="p-3 border border-secondary border-opacity-50 rounded-3">
+            <input class="form-check-input filterInput me-1" type="radio" name="view" value="day" id="dayBtn">
+            <label class="form-check-label" for="thirdRadio">Tarefas do dia</label>
+        </li>
+        <li class="p-3 border border-secondary border-opacity-50 rounded-3">
+            <input class="form-check-input filterInput me-1" type="radio" name="view" value="month"
+                id="monthBtn">
+            <label class="form-check-label" for="monthBtn">Tarefas do mês</label>
+        </li>
+        <li class="p-3 border border-secondary border-opacity-50 rounded-3">
+            <input class="form-check-input filterInput me-1" type="radio" name="view" value="period"
+                id="periodBtn">
+            <label class="form-check-label" for="periodBtn">Período customizado</label>
+            <div class="periodContainer">
+                <div class="my-3 w-100">
+                    <label for="date_from" class="form-label">Data início</label>
+                    <input type="date" class="form-control" id="date_from" name="date_from">
+                </div>
+                <div class="w-100">
+                    <label for="date_to" class="form-label">Data fim</label>
+                    <input type="date" class="form-control" id="date_to" name="date_to">
+                </div>
+            </div>
+        </li>
+    </ul>
+</form>
