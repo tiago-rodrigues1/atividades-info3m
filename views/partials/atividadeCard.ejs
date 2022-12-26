@@ -8,7 +8,7 @@
                 <span><%= activity.date %></span>
             </div>
             <div class="card-body">
-                <h5 class="card-title"><%= activity.subject.name %></h5>
+                <h5 class="card-title"><%= activity.subject[0].name %></h5>
                 <p class="card-text">
                     <%= activity.description %>
                 </p>
@@ -17,7 +17,7 @@
                 class="card-footer border-secondary border-opacity-25 hstack align-items-center justify-content-between">
                 <small><%= activity.value %> Pontos</small>
                 <div class="btn-group dropend">
-                    <button type="button" class="btn btn-sm btn-secondary dropdown-toggle"
+                    <button type="button" class="btn btn-sm btn-primary dropdown-toggle"
                         data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="assets/icons/settings.svg" alt="Icone de configurações">
                     </button>
