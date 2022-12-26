@@ -106,9 +106,9 @@ class SubjectController {
         }
 
         try {
-            const isAlreadyRegistered = await db.collection(this.#collection).countDocuments(body.query);
+            const isAlreadyRegisteredResult = await isDocumentRegistered(db.collection(this.#collection), query);
 
-            if (isAlreadyRegistered) {
+            if (isAlreadyRegisteredResult) {
                 let updateDocument = {
                     $set: {
                         "name": body.newName
