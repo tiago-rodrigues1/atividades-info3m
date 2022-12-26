@@ -1,28 +1,32 @@
-<div class="col">
-    <div class="card mb-3 text-light border border-secondary border-opacity-50"
-        style="background-color: #292E34;">
-        <div
-            class="card-header border-secondary border-opacity-25 hstack align-items-center justify-content-between">
-            <span>Prova</span>
-            <span>19/12/2022</span>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Matemática</h5>
-            <p class="card-text">Conteúdo: geometria analítica</p>
-        </div>
-        <div
-            class="card-footer border-secondary border-opacity-25 hstack align-items-center justify-content-between">
-            <small class="text-success">Finalizado</small>
-            <div class="btn-group dropend">
-                <button type="button" class="btn btn-sm btn-secondary dropdown-toggle"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="assets/icons/settings.svg" alt="Icone de configurações">
-                </button>
-                <ul class="dropdown-menu dropdown-menu-dark">
-                    <li class="dropdown-item">Editar</li>
-                    <li class="dropdown-item">Excluir</li>
-                </ul>
+<% data.activities.forEach(function (activity) { %>
+    <div class="col">
+        <div class="card mb-3 text-light border border-secondary border-opacity-50"
+            style="background-color: #292E34;">
+            <div
+                class="card-header border-secondary border-opacity-25 hstack align-items-center justify-content-between">
+                <span><%= activity.type %></span>
+                <span><%= activity.date %></span>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"><%= activity.subject.name %></h5>
+                <p class="card-text">
+                    <%= activity.description %>
+                </p>
+            </div>
+            <div
+                class="card-footer border-secondary border-opacity-25 hstack align-items-center justify-content-between">
+                <small><%= activity.value %> Pontos</small>
+                <div class="btn-group dropend">
+                    <button type="button" class="btn btn-sm btn-secondary dropdown-toggle"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="assets/icons/settings.svg" alt="Icone de configurações">
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li class="dropdown-item">Editar</li>
+                        <li class="dropdown-item">Excluir</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
+<%});%>
