@@ -1,4 +1,4 @@
-$(document).ready(function () {
+function filtersHandler() {
     const periodContainer = $(".periodContainer");
     const filtersElement = $("#filters");
     const togglerElement = $(".toggler");
@@ -23,9 +23,10 @@ $(document).ready(function () {
 
     $("#filterForm").submit(function (e) {
         e.preventDefault();
-        
+
         const filterFormData = $(this).serializeArray();
         const { value } = filterFormData[0];
+        console.log(e);
 
         switch (value) {
             case "week":
@@ -43,4 +44,8 @@ $(document).ready(function () {
                 break;
         }
     });
+}
+
+$(document).ready(async function () {
+    filtersHandler();
 });
