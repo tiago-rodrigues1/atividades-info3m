@@ -11,20 +11,32 @@
 </head>
 
 <body class="container-fluid bg-dark p-0 m-0 text-light">
-    <%- include('../partials/navbar') %>
-    <main class="d-flex flex-column flex-md-row gap-4 p-4 w-100 h-100">
-        <%- include('../partials/filters') %>
-        <section class="w-100 h-100 p-0 m-0">
-            <h1 class="fs-2">Tarefas</h1>
-            <div class="m-0 p-0 row row-cols-1 row-cols-md-2 row-cols-lg-3 row-xl-4 g-4">
-                <%- include('../partials/atividadeCard', {data: data}); %>
-            </div>
-        </section>
-    </main>
+    <% if (data != null) { %>
+        <%- include('../partials/navbar') %>
+        <main class="d-flex flex-column flex-md-row gap-4 p-4 w-100 h-100">
+            <%- include('../partials/filters') %>
+            <section class="w-100 h-100 p-0 m-0">
+                <h1 class="fs-2">Tarefas</h1>
+                <div class="m-0 p-0 row row-cols-1 row-cols-md-2 row-cols-lg-3 row-xl-4 g-4">
+                    <%- include('../partials/atividadeCard', {data: data}); %>
+                </div>
+            </section>
+        </main>
+    <% } else { %>
+        <%- include('../partials/loading') %>
+    <% } %>
+
     <script src="/scripts/jquery.min.js"></script>
+
+    <script>
+        if (window.location.pathname == "/") {
+            window.location.replace("/app");
+        } 
+    </script>
+
     <script src="/scripts/dayjs.min.js"></script>
     <script src="/scripts/bootstrap.bundle.min.js"></script>
-    <script src="/scripts/script.js"></script>
+    <script src="/scripts/script.js" type="text/javascript"></script>
 </body>
 
 </html>
