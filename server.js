@@ -23,28 +23,19 @@ app.get("/", async (req, res) => {
     res.render("pages/index", { data: null });
 });
 
-app.get("/app", cacheMiddleware, async (req, res) => {
+app.get("/app", cacheMiddleware, (req, res) => {
     try {
-        let pageData;
+        let data = {};
 
-        if (req.cache) {
-            pageData = req.cache;
-        } else {
-            const url = "http://localhost:8080/api/activities";
-            const response = await axios.get(url);
+        data.activities = req.activities;
+        data.subjects = req.subjects;
 
-            if (response.status === 200) {
-                pageData = response.data;
-            } else {
-                return new Error("A aplicação encontra-se com problema. Tente mais tarde");
-            }
-        }
-
-        res.render("pages/index", { data: pageData });
+        res.render("pages/index", { data: data });
     } catch (e) {
         console.log(e);
     }
 });
+
 
 app.listen(8080);
 console.log("8080 is the magic port");
