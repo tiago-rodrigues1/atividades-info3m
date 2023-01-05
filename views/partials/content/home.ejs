@@ -1,0 +1,9 @@
+<main class="content d-flex flex-column flex-md-row gap-4 p-4 w-100 h-100" id="home">
+    <%- include('../filters', { data: data.subjects }) %>
+    <section class="w-100 h-100 p-0 m-0">
+        <h1 class="fs-2">Tarefas</h1>
+        <div class="m-0 p-0 row row-cols-1 row-cols-md-2 row-cols-lg-3 row-xl-4 g-4">
+            <%- include('../atividadeCard', {data: data.activities}); %>
+        </div>
+    </section>
+</main>

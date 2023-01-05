@@ -1,0 +1,60 @@
+<main class="content p-4 d-flex flex-column align-items-center justify-content-center w-100" style="display: none !important;" id="novaAtividade">
+    <form class="col-12 col-md-8 col-lg-6" id="addForm" method="post">
+        <h1 class="fs-2 pb-3 align-self-start">Nova atividade</h1>
+        <div class="mb-3">
+            <label class="form-label" for="subject">Matéria</label>
+            <select class="form-select text-bg-dark" required id="subject" name="subject_code">
+                <% data.forEach(function (subject) { %>
+                    <option value="<%= subject.code %>"><%= subject.name%></option>
+                <% }); %>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="description">Descrição</label>
+            <textarea 
+                class="form-control" 
+                name="description" 
+                id="description" 
+                rows="5"  
+                placeholder="Instruções sobre a atividade, alguma observação importante..."
+                required
+            ></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="type">Tipo de atividade</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Exemplo: Prova" 
+                name="type"
+                id="type"
+                required
+            >
+        </div>
+        <div class="mb-3">
+            <label for="date" class="form-label">Data de entrega</label>
+            <input 
+                type="text" 
+                class="form-control"
+                id="date"
+                name="date"
+                required
+                placeholder="Exemplo: 22/10/2023"
+            >
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Pontuação</label>
+            <input 
+                type="number" 
+                class="form-control"
+                name="value" 
+                id="value"
+                placeholder="Exemplo: 80"
+                required
+            >
+        </div>
+        <div class="my-4 py-3">
+            <button type="submit" class="w-100 btn btn-primary">Cadastrar</button>
+        </div>
+    </form>
+</main>
